@@ -1,0 +1,28 @@
+body{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    background-color: lightblue;
+    color: white;
+}
+input{
+    border-radius: 5px;
+    color: grey;
+}
+
+
+#button{
+    width: 60%;
+    background-color: burlywood;
+}
+.edit{
+    background-color: burlywood;
+}
+#delete{
+    background-color: red;
+}
+input{
+    background-color: white;
+}

@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import '../../Todos.css'
 
 const Todos = () => {
     //anytime you update the first value use the second to update it
@@ -41,9 +42,11 @@ const Todos = () => {
 
   
     return (
-        <div>
+      <div>
+          <div id='body'>
+            <h2>Gottodo</h2>
           <input id='input' value={value} onChange={(e)=> setValue(e.target.value)} />
-          <button onClick={handleClick}>Add To List</button>
+          <button onClick={handleClick} id='button'>Add To List</button>
           {/* <button onClick={handleClickRm}>Remove First Todo Item</button> */}
           {/* <button id='editButton' onClick={yourEditFunction}>Edit List</button> */}
           <div>
@@ -54,19 +57,20 @@ const Todos = () => {
                   {updateItem === index ? (
                     <div>
                       <input id='editInput' value={editValue} onChange={(e)=> setEditValue(e.target.value)} />
-                      <button onClick={handleUpdate}>Update</button>
+                      <button className='edit' onClick={handleUpdate}>Update</button>
                     </div>
                   ) : (
-                    <div>
-                      {todoItems}
-                      <button onClick={()=>handleSelect(index)}>Edit</button> 
-                      <button onClick={()=> handleClickRm(index)}>X</button>
+                    <div><br />
+                      <strong>{todoItems}</strong>
+                      <br /><button className='edit' onClick={()=>handleSelect(index)}>Edit</button> 
+                      <button id='delete' onClick={()=> handleClickRm(index)}>X</button>
                     </div>
                   )}
                 </li>
               ))}
             </ol>
           </div>
+        </div>
         </div>
       );
 };
